@@ -37,7 +37,7 @@ Die Anwendung folgt dem komponentenbasierten Architekturansatz, um die Wiederver
 
 1. **Projekt klonen**:
    ```bash
-   git clone https://github.com/DeinBenutzername/Da-Bubble.git
+   git clone https://github.com/Marco-Ammann/Da-Bubble.git
    cd Da-Bubble
    ```
 
@@ -47,7 +47,7 @@ Die Anwendung folgt dem komponentenbasierten Architekturansatz, um die Wiederver
    ```
 
 3. **Umgebungsvariablen einrichten**:
-   Erstelle eine `src/environments/environment.ts`-Datei mit den nötigen Firebase-Konfigurationsdaten.
+   Erstelle eine `src/app/firebase.config.ts`-Datei mit den nötigen Firebase-Konfigurationsdaten.
 
 4. **Lokaler Server starten**:
    ```bash
@@ -65,9 +65,13 @@ Dieses Projekt hat es mir ermöglicht, tiefere Einblicke in den Aufbau moderner 
 - **Optimierung und Debugging**: Behebung von Performance-Problemen und Optimierung der Datenbankzugriffe.
 
 ## 📸 Screenshots
+Logo:
+![Screenshot 2024-08-30 234533](https://github.com/user-attachments/assets/ae825e81-9c79-4375-b5c8-9aa91ef4e629)
 
-*![image](https://github.com/user-attachments/assets/bc02e527-0b14-468c-a843-be557cb07b0f)
-*
+Hauptseite:
+![image](https://github.com/user-attachments/assets/bc02e527-0b14-468c-a843-be557cb07b0f)
+
+
 
 ## 📝 Fazit
 
