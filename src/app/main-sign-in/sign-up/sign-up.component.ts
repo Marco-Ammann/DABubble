@@ -235,7 +235,7 @@ export class SignUpComponent {
     );
     let guestChannelObj = await this.channelService.getChannelByName(
       guestChannel,
-      true
+      false
     );
 
     if (!channel) {
