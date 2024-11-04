@@ -1,0 +1,28 @@
+@import "./../../../styles.scss";
+@import '../../../styles/front-page.scss';
+
+.gap32 {
+    gap: 32px;
+}
+
+.gap16 {
+    display: grid;
+    gap: 16px;
+}
+
+mat-card-subtitle {
+    text-align: left;
+    margin: 0;
+}
+
+.imprint-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

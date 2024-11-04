@@ -1,0 +1,574 @@
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
+  display: inline-flex;
+  padding: 32px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  border-radius: 30px 0px 30px 30px !important;
+  background: var(--White, #fff);
+  box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 187px;
+  right: 100px;
+  width: auto;
+  height: auto;
+}
+
+::ng-deep .cdk-overlay-backdrop,
+.cdk-overlay-backdrop-showing {
+  opacity: 1 !important;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    color: var(--Black, #000);
+    font-family: Nunito;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  mat-icon {
+    cursor: pointer;
+  }
+}
+
+mat-dialog-content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 0 !important;
+}
+
+.memberDiv {
+  display: flex;
+  width: 100%;
+  padding: 0px 20px;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  transition: background-color 0.2s ease-in-out;
+
+  cursor: pointer;
+
+  span {
+    color: var(--Black, #000);
+    font-family: Nunito;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &:hover {
+    border-radius: 30px;
+    background-color: #eceefe;
+  }
+}
+
+.status-indicator {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 2px solid #fff;
+  margin-left: -26px;
+  margin-top: 40px;
+  margin-right: 8px;
+  flex-shrink: 0;
+
+  &.online {
+    background-color: #92c83e;
+  }
+
+  &.away {
+    background-color: #ffc107;
+  }
+
+  &.offline {
+    background-color: #686868;
+  }
+}
+
+mat-dialog-actions.showMembers_actions {
+  padding: 0 !important;
+}
+
+mat-dialog-actions.addUserContent_actions {
+  padding: 0 !important;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.addUserDiv {
+  display: flex;
+  padding: 12px 29px;
+  align-items: center;
+  gap: 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+
+  .addUserIcon {
+    display: flex;
+    padding: 4px;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 30px;
+    background: var(--Bg-color, #eceefe);
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  span {
+    color: var(--Black, #000);
+    font-family: Nunito;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &:hover {
+    border-radius: 30px;
+    background-color: #eceefe;
+
+    .addUserIcon {
+      background-color: #fff;
+    }
+  }
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-dialog-content {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+::ng-deep .mat-mdc-dialog-surface.mdc-dialog__surface {
+  overflow: visible !important;
+  width: 415px;
+}
+
+.userToClick {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px 15px;
+  gap: 10px;
+
+  &:hover {
+    border-radius: 30px;
+    background-color: #eceefe;
+  }
+
+  >h2 {
+    margin: 0;
+    padding: 0;
+    color: var(--Black, #000);
+    font-size: 16px;
+  }
+
+  img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.selected {
+  cursor: pointer;
+  display: flex;
+  padding: 4px 20px;
+  align-items: center;
+  gap: 15px;
+  border-radius: 30px;
+  background-color: #b8beec;
+
+  &:hover {
+    background-color: #8690df;
+  }
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.userToClick.disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+  padding: 2px 10px;
+  margin-left: 10px;
+
+  h2 {
+    color: grey;
+    font-size: 14px;
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .status-indicator_addUser {
+    width: 12px;
+    height: 12px;
+    margin-left: -31px;
+    margin-top: 34px;
+    margin-right: 0px;
+  }
+}
+
+.userToClick.disabled:hover {
+  background-color: transparentize($color: #eceefe, $amount: 0.5);
+}
+
+.userToClick.disabled .already-member-text {
+  font-size: 10px;
+  color: grey;
+  margin-left: 5px;
+}
+
+.inputDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  border-radius: 30px;
+  border: 1px solid rgba(173, 176, 217, 1);
+  outline-color: var(--purple-one);
+  font-size: 18px;
+  color: var(--black);
+  margin-bottom: 20px;
+  width: 100%;
+
+  &:hover,
+  &:focus-within {
+    border-color: var(--purple-one);
+  }
+
+  mat-chip-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 60px;
+    padding: 10px 20px;
+    width: 100%;
+
+    mat-chip-row {
+      border-radius: 35px;
+      background: var(--Bg-color, #eceefe);
+      display: flex;
+      align-items: center;
+      height: 40px;
+
+      .chip-content {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 30px;
+      }
+
+      img {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      span {
+        font-size: 16px;
+        color: var(--Black, #000);
+      }
+
+      .mat-chip-remove {
+        margin-left: 0px;
+      }
+    }
+  }
+
+  input {
+    flex: 1 1 auto;
+    min-width: 120px;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: var(--black);
+    padding: 0 0 0 10px;
+    margin: 0;
+    height: 40px;
+    align-self: center;
+  }
+}
+
+mat-icon {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--black, #000) !important;
+  cursor: pointer;
+}
+
+.mdc-dialog__content> :last-child {
+  width: 100% !important;
+}
+
+.addUserInput {
+  width: 100%;
+  height: 60px;
+  border-radius: 30px;
+  border: transparent;
+  outline-color: none;
+  outline: none;
+  font-size: 18px;
+  color: var(--black);
+  padding: 20px;
+}
+
+.hoveringUserList {
+  display: flex;
+  padding: 20px 21px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
+
+  position: absolute;
+  top: 43px;
+  left: 22px;
+  z-index: 10;
+
+  border-radius: 0px 20px 20px 20px;
+  border: 1px solid var(--ligth-purple-lines, #adb0d9);
+  background: var(--White, #fff);
+  /* header */
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.08);
+}
+
+.status-indicator_addUser {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 2px solid #fff;
+  margin-left: -33px;
+  margin-top: 40px;
+  margin-right: 0px;
+  flex-shrink: 0;
+
+  &.online {
+    background-color: #92c83e;
+  }
+
+  &.away {
+    background-color: #ffc107;
+  }
+
+  &.offline {
+    background-color: #686868;
+  }
+}
+
+.showMemberContent {
+  padding: 0 !important;
+}
+
+.addUserContent {
+  overflow: visible;
+  padding: 0 !important;
+
+  h2 {
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+    padding: 0;
+    margin: 0;
+    text-wrap: nowrap;
+    line-height: normal;
+  }
+
+  .channelName {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 400;
+    color: #797ef3;
+    padding: 0 0 20px 0;
+    margin: 0;
+
+    span {
+      font-size: 24px;
+      font-weight: 700;
+      margin-right: 15px;
+    }
+  }
+}
+
+.addUsersBtn {
+  display: inline-flex;
+  padding: 12px 25px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: transparent;
+  border-radius: 25px;
+  background: #444df2;
+  color: #fff;
+
+  cursor: pointer;
+
+  &:hover {
+    border-radius: 25px;
+    background-color: #797ef3;
+  }
+
+  &:active {
+    border-radius: 25px;
+    background-color: #444df2;
+  }
+
+  &:disabled {
+    border-radius: 25px;
+    background-color: #686868;
+    cursor: not-allowed;
+  }
+}
+
+
+@media (max-width: 1079px) {
+  ::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    padding: 24px;
+    min-width: 320px;
+    border-radius: 30px !important;
+  }
+
+  .memberDiv {
+    padding: 0px 20px;
+
+    img {
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+  .status-indicator {
+    margin-top: 35px;
+    margin-right: 0;
+  }
+
+  .addUserContent {
+
+    h2 {
+      font-size: 16px;
+    }
+
+    .channelName {
+      span {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .inputDiv {
+    font-size: 16px;
+
+    input {
+      font-size: 16px;
+    }
+  }
+
+}
+
+@media(max-width: 550px) {
+  ::ng-deep .mat-mdc-dialog-container {
+    max-width: 280px !important;
+    max-height: 250px !important;
+  }
+
+  ::ng-deep .mdc-dialog__surface {
+    max-width: 280px !important;
+    max-height: 100% !important;
+  }
+
+  .hoveringUserList {
+    max-width: 250px;
+    padding: 8px;
+    gap: 0px;
+
+    .userToClick {
+      padding: 0px;
+      margin: 8px;
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+
+      .status-indicator_addUser {
+        margin-top: 25px;
+      }
+    }
+  }
+
+  .inputDiv {
+    mat-chip-grid {
+      min-height: 30px;
+      padding: 5px 10px;
+    }
+  }
+
+  .addUserContent {
+    .channelName {
+      padding: 0 0 8px 0;
+    }
+  }
+
+  .userToClick.disabled {
+    img {
+      width: 30px;
+      height: 30px;
+    }
+
+    h2 {
+      text-wrap: auto;
+    }
+
+    .status-indicator_addUser {
+      margin-top: 25px;
+    }
+  }
+}

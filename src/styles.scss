@@ -1,0 +1,130 @@
+@use "@angular/material" as mat;
+$nunito-typography: mat.define-typography-config(
+  $font-family: '"Nunito", sans-serif'
+);
+
+@include mat.typography-hierarchy($nunito-typography);
+$app-theme: mat.define-light-theme(
+  (
+    typography: $nunito-typography
+  )
+);
+@include mat.all-component-themes($app-theme);
+@import "./fonts.scss";
+@import "./styles/mixins.scss";
+@import "./styles/colors.scss";
+@import "./styles/reaction-tooltip.scss";
+@import "@ctrl/ngx-emoji-mart/picker";
+@import "./styles/emoji-mart.scss";
+@font-face {
+  font-family: "Raleway";
+  src: none;
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 16px;
+  margin: 0;
+  font-family:
+    Nunito,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  background-color: var(--main-background, rgb(235, 239, 254));
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  min-height: 100vh;
+  width: 100%;
+  overflow-y: hidden !important;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.unselectable {
+  user-select: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.jc-end {
+  justify-content: flex-end !important;
+}
+
+.jc-start {
+  justify-content: flex-start !important;
+}
+
+.align-start {
+  align-items: flex-start !important;
+}
+
+.align-end {
+  align-items: flex-end !important;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.centered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-purple);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--purple-two);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--purple-one);
+}
+
+.cdk-overlay-backdrop,
+.cdk-overlay-backdrop-showing {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+.backdropVisible {
+  display: block !important;
+  opacity: 1 !important;
+}
+
+.mat-mdc-menu-panel {
+  border-radius: 20px !important;
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}

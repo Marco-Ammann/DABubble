@@ -1,0 +1,146 @@
+@import "./../../../../styles/mixins.scss";
+
+.modal-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.max-width {
+  width: 100%;
+  max-width: 1920px;
+  height: 100%;
+  position: relative;
+
+  @media screen and (max-width: 600px) {
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+.menu-container {
+  display: inline-flex;
+  padding: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  border-radius: 30px 0px 30px 30px;
+  background: var(--white, rgb(255, 255, 255));
+  box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 123px;
+  right: 8px;
+
+  .profil-btn,
+  .logout-btn {
+    width: 222px;
+    height: 53px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--black, rgb(0, 0, 0));
+    cursor: pointer;
+
+    &:hover {
+      @include btn-hover();
+      padding: 8px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+}
+
+.mobile-menu-container {
+  display: none;
+  width: 100%;
+  padding: 30px 26px;
+  gap: 15px;
+  flex-direction: column;
+  border-radius: 30px 30px 0px 0px;
+  background: var(--white, rgb(255, 255, 255));
+  box-shadow: 0px -3px 10px 0px rgba(0, 0, 0, 0.2);
+
+  .rectangle {
+    width: 62px;
+    height: 6px;
+    border-radius: 23px;
+    background: rgb(217, 217, 217);
+  }
+
+  .mobile-profil-btn,
+  .mobile-logout-btn {
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    width: fit-content;
+    @include btn-hover();
+
+    .mobile-profil-icon {
+      width: 30px;
+      height: 30px;
+      background-image: url(./../../../../assets/img/profilecard/account_circle.svg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+    }
+
+    .mobile-logout-icon {
+      width: 30px;
+      height: 30px;
+      background-image: url(./../../../../assets/img/profilecard/logout.svg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+    }
+
+    span {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--black, rgb(0, 0, 0));
+    }
+  }
+
+  @media screen and (max-width: 599px) {
+    display: flex;
+  }
+}
+
+/* Animations menu*/
+.slideIn {
+  animation: slideIn 0.3s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.slideOut {
+  animation: slideOut 0.3s forwards;
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}

@@ -1,0 +1,43 @@
+<header>
+  <div class="max-width">
+    <div class="logo-container" (click)="onMobileLogoClick()" [ngClass]="{
+      'mobile-mode': isMobileView,
+      'padding-left': isMobileView && currentView !== 'channels'
+    }">
+      <img *ngIf="isMobileView && currentView !== 'channels'" src="./assets/img/icons/back.png" alt="back"
+        class="back-nav-logo" />
+      <img src="./assets/img/logo.svg" alt="Logo" class="logo" />
+    </div>
+    <div #searchbarDiv class="searchbar">
+      <input #searchInput type="text" placeholder="Devspace durchsuchen" [(ngModel)]="searchQuery"
+        (input)="onSearchInput($event)" (keydown)="onSearchKeydown($event)" />
+      <mat-icon matSuffix>search</mat-icon>
+      <div *ngIf="searchResults && searchResults.length > 0" class="search-results">
+        <ul>
+          <li #searchResultItem *ngFor="let message of searchResults; let i = index" (click)="goToMessage(message)"
+            [class.selected]="i === selectedSearchResultIndex">
+            <span class="message-sender">
+              <span class="black-text">von</span> {{ getUserName(message.senderId) }}
+              <span class="black-text"> an #<span class="message-sender">{{ getChannelName(message.chatId,
+                  message.isPrivateChat) }}</span>:<span class="pd-8"></span></span>
+            </span>
+            <span class="message-content">{{ message.content }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="profile" mat-button cdkFocusInitial (click)="openMenu()">
+      <h2>{{ currentUser.name }}</h2>
+      <div class="profil-img-div">
+        <img [src]="currentUser.avatar || 'assets/img/profile/fallback_user.png'" alt="profile image"
+          class="profile-img" (error)="currentUser.avatar = 'assets/img/profile/fallback_user.png'" />
+        <div *ngIf="currentUser.status === 'online'" class="status-indicator online"></div>
+        <div *ngIf="currentUser.status === 'away'" class="status-indicator away"></div>
+        <div *ngIf="currentUser.status === 'offline'" class="status-indicator offline"></div>
+      </div>
+      <mat-icon fontIcon="keyboard_arrow_down"></mat-icon>
+    </div>
+  </div>
+</header>
+<app-menu (closeMenu)="closeMenu()" (openProfile)="openProfil(currentUser)" *ngIf="isMenuOpen"></app-menu>
+<app-profil [onclickUser]="currentUser" (closeProfileCard)="closeProfil()" *ngIf="isProfilOpen"></app-profil>

@@ -1,0 +1,50 @@
+<mat-card class="login-card centered">
+  <mat-card-title>Anmeldung</mat-card-title>
+  <mat-card-subtitle>Wir empfehlen dir, die E-Mail-Adresse zu nutzen, die du bei der Arbeit
+    verwendest.</mat-card-subtitle>
+  <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+    <div class="input-container"
+      [ngClass]="{ 'invalid-border': email.invalid && (email.dirty || email.touched || formSubmitted) }">
+      <img src="/assets/img/front-page/mail.svg" alt="email icon">
+      <input type="email" formControlName="email" autocomplete="email" placeholder="beispielname@email.com">
+    </div>
+    <span class="validMsg" [class.hidden]="!(email.invalid && (email.touched || formSubmitted))">
+      <ng-container *ngIf="email.errors?.['required']; else otherErrors">
+        Bitte geben Sie eine E-Mail-Adresse ein.
+      </ng-container>
+      <ng-template #otherErrors>
+        <ng-container *ngIf="email.errors?.['email']; else patternError">
+          Bitte geben Sie eine gültige E-Mail-Adresse ein.
+        </ng-container>
+      </ng-template>
+      <ng-template #patternError>
+        Bitte geben Sie eine vollständige E-Mail-Adresse ein.
+      </ng-template>
+    </span>
+    <div class="input-container"
+      [ngClass]="{ 'invalid-border': password.invalid && (password.dirty || password.touched || formSubmitted) }">
+      <img src="/assets/img/front-page/lock.svg" alt="password icon">
+      <input type="password" formControlName="password" autocomplete="password" placeholder="Passwort">
+    </div>
+    <span class="validMsg" [class.hidden]="!(password.invalid && (password.touched || formSubmitted) || signInError)">
+      {{ password.invalid && (password.touched || formSubmitted) ? 'Das Passwort muss mindestens 8 Zeichen lang sein.' :
+      signInError }}
+    </span>
+    <div class="password-container">
+      <a [routerLink]="['reset-password']" class="forgot-password">Passwort vergessen?</a>
+    </div>
+    <div class="or-divider">
+      <div class="line"></div>
+      <span>ODER</span>
+      <div class="line"></div>
+    </div>
+    <button class="google-login" (click)="signInWithGoogle($event)" type="button">
+      <img src="/assets/img/front-page/Google.svg" alt="Google Logo" class="google-icon">
+      <span>Anmelden mit Google</span>
+    </button>
+    <div class="login-actions">
+      <button type="submit" class="prio-button" [disabled]="signInForm.invalid">Anmelden</button>
+      <button (click)="guestLogin($event)" class="alt-button">Gäste-Login</button>
+    </div>
+  </form>
+</mat-card>

@@ -1,0 +1,131 @@
+@import "./../../../../styles/front-page.scss";
+
+.invalid-border {
+  border-color: var(--error-color, rgb(255, 0, 0));
+}
+
+.flex-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.email-container {
+  margin-top: 8px;
+}
+
+.email-icon {
+  width: 30px;
+  height: 30px;
+  background-image: url("./../../../../assets/img/profilecard/mail.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.success-message {
+  color: var(--success-color, rgb(0, 255, 0));
+}
+
+.error-message {
+  color: var(--error-color, rgb(255, 0, 0));
+}
+
+.h2text {
+  color: var(--black, rgb(0, 0, 0));
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.width-100 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 29px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 32px;
+
+  .btn {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+    justify-content: center;
+    border-radius: 50px;
+    width: fit-content;
+    transition: ease-in-out 150ms;
+    cursor: pointer;
+
+    &:disabled {
+      cursor: unset;
+      opacity: 0.6;
+      background-color: var(--disabled-background, rgb(204, 204, 204));
+      color: var(--disabled-text, rgb(102, 102, 102));
+      border: none;
+    }
+  }
+
+  .btn-cancel {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--purple-one, rgb(68, 77, 242));
+    border: 1px solid var(--purple-one, rgb(68, 77, 242));
+
+    &:hover {
+      background: var(--purple-one, rgb(68, 77, 242));
+      color: var(--white, rgb(255, 255, 255));
+    }
+
+    &:disabled {
+      background-color: transparent;
+      color: var(--disabled-text, rgb(102, 102, 102));
+      border: 1px solid var(--disabled-border, rgb(204, 204, 204));
+    }
+  }
+
+  .btn-save {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white, rgb(255, 255, 255));
+    background: var(--purple-one, rgb(68, 77, 242));
+    border: none;
+
+    &:hover {
+      background: var(--purple-two, rgb(121, 126, 243));
+    }
+
+    &:disabled {
+      background-color: var(--disabled-background, rgb(204, 204, 204));
+      color: var(--disabled-text, rgb(102, 102, 102));
+    }
+  }
+
+  @media (max-width: 550px) {
+    justify-content: space-between;
+    width: 100%;
+    gap: unset;
+  }
+}
+
+@media (max-width: 550px) {
+  .h2text {
+    font-size: 16px;
+  }
+
+  .button-container {
+    .btn {
+      padding: 8px 16px;
+    }
+
+    .btn-cancel {
+      font-size: 14px;
+    }
+
+    .btn-save {
+      font-size: 14px;
+    }
+  }
+}

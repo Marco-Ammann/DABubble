@@ -1,0 +1,6 @@
+<div class="confirmation-box" (animationend)="onAnimationEnd($event)">
+  <div *ngIf="data.image">
+    <img [src]="data.image" alt="confirmation image">
+  </div>
+  <h1>{{ data.message }}</h1>
+</div>

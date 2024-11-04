@@ -1,0 +1,682 @@
+.header {
+  position: relative;
+  z-index: 3;
+}
+
+.header-title {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding-left: 32px;
+  padding-right: 32px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  z-index: 2;
+
+  h2 {
+    margin: 0;
+    padding-left: 15px;
+  }
+}
+
+.message-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  >div {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    cursor: pointer;
+    width: fit-content;
+
+    >img {
+      width: 100px;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    >h2 {
+      margin: 0;
+      padding-left: 24px;
+      color: var(--Black, #000);
+      font-size: 24px;
+      font-weight: 700;
+      line-height: normal;
+      font-family: Nunito;
+
+      &:hover {
+        color: var(--Purple-3, #535af1);
+      }
+    }
+  }
+
+  >span {
+    color: var(--Text-gray, #686868);
+    font-family: Nunito;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    >span {
+      cursor: pointer;
+      color: var(--Purple-3, #535af1);
+      font-family: Nunito;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
+      &:hover {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+
+  .header-channel-name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 30px;
+    padding: 4px 12px;
+    position: relative;
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    &:hover {
+      background-color: var(--main-background);
+      color: var(--purple-one);
+      cursor: pointer;
+    }
+  }
+
+  .header-channel-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 200px;
+    padding-right: 16px;
+
+    .channelMembersIcons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3px 10px;
+      border-radius: 30px;
+
+      img:first-child {
+        margin-left: 0px;
+      }
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        border: 2px solid #fff;
+        margin-left: -10px;
+        object-fit: cover;
+      }
+
+      .amountUsersIcon {
+        margin: 0 10px;
+        font-size: 20px;
+        line-height: 27.28px;
+        font-weight: 600;
+        font-family: "Nunito";
+      }
+
+      &:hover {
+        transition: all 0.2s ease-in;
+        background: #eceefe;
+        cursor: pointer;
+
+        .amountUsersIcon {
+          color: #535af1;
+        }
+      }
+    }
+
+    .addUserIconDiv {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--main-background);
+      padding: 8px;
+      border-radius: 20px;
+      margin-left: 10px;
+
+      img {
+        &:hover {
+          cursor: pointer;
+          filter: brightness(0) saturate(100%) invert(32%) sepia(75%) saturate(6900%) hue-rotate(237deg) brightness(102%) contrast(90%);
+        }
+      }
+    }
+  }
+}
+
+.wrapper {
+  height: calc(100vh - 131px);
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  display: flex;
+  flex-direction: column;
+}
+
+.spinner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileImg {
+  height: 50px;
+  aspect-ratio: 1/1;
+  position: relative;
+
+  >img:nth-child(1) {
+    object-fit: cover;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+  }
+
+  >img:nth-child(2) {
+    object-fit: cover;
+    width: auto;
+  }
+
+  .online {
+    height: 14px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+  }
+}
+
+.relative-container {
+  position: relative;
+}
+
+.messageBox {
+  border: 1px solid rgb(213, 215, 235);
+  border-radius: 20px;
+  padding: 16px;
+  margin: 16px;
+  height: 184px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+  &:hover {
+    border-color: rgb(161, 165, 248);
+  }
+
+  textarea {
+    border: none;
+    outline: none;
+    resize: none;
+    width: 100%;
+    height: 80px;
+    color: #686868;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .messageBoxBottom {
+    width: 100%;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      width: 24px;
+    }
+
+    .iconsLeft {
+      display: flex;
+
+      div {
+        background-repeat: no-repeat;
+        width: 32px;
+        height: 32px;
+        background-position: center center;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .border {
+        width: 2px !important;
+        background-color: rgb(214, 215, 236);
+        margin: 0 8px 0 8px;
+      }
+
+      .addIcon {
+        background-image: url(../../../assets/img/icons/add.png);
+
+        &:hover {
+          background-image: url(../../../assets/img/icons/addHover.svg);
+          background-color: rgb(235, 239, 254);
+          border-radius: 100%;
+        }
+
+        &:active {
+          background-image: url(../../../assets/img/icons/addClicked.svg);
+        }
+      }
+
+      .emoji {
+        margin-right: 16px;
+        background-image: url(../../../assets/img/icons/emoji.svg);
+
+        &:hover {
+          background-image: url(../../../assets/img/icons/emojiHover.svg);
+          background-color: rgb(235, 239, 254);
+          border-radius: 100%;
+        }
+
+        &:active {
+          background-image: url(../../../assets/img/icons/emojiClicked.svg);
+        }
+      }
+
+      .iconMarkUser {
+        background-image: url(../../../assets/img/icons/@.svg);
+
+        &:hover {
+          background-image: url(../../../assets/img/icons/@Hover.svg);
+          background-color: rgb(235, 239, 254);
+          border-radius: 100%;
+        }
+
+        &:active {
+          background-image: url(../../../assets/img/icons/@Clicked.svg);
+        }
+      }
+    }
+
+    .sendMessage {
+      background-repeat: no-repeat;
+      width: 32px;
+      height: 32px;
+      background-position: center center;
+      background-image: url(../../../assets/img/icons/send.svg);
+
+      &:hover {
+        background-image: url(../../../assets/img/icons/sendHover.svg);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.chat-container.no-messages-active {
+  justify-content: flex-end;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  padding: 16px 32px;
+  max-height: calc(100% - 265px);
+  overflow-y: auto;
+  flex-grow: 1;
+  z-index: 1;
+  scroll-behavior: smooth;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .no-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+
+    .nm_header {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      .nm_hashtag {
+        color: #000;
+        width: 22px;
+        height: 23px;
+      }
+
+      .nm_channelName {
+        font-family: Nunito;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32.74px;
+        text-align: left;
+      }
+    }
+
+    .nm_content {
+      .nm_text {
+        font-family: Nunito;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 27.28px;
+        text-align: left;
+        color: #000;
+      }
+
+      .nm_text_channelName {
+        font-family: Nunito;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 27.28px;
+        text-align: left;
+        color: #535af1;
+      }
+    }
+  }
+
+  &.no-messages {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.chat-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+  background: rgb(121, 126, 243);
+  border-radius: 4px;
+}
+
+.chat-container::-webkit-scrollbar-thumb:hover {
+  background: rgb(78, 84, 242);
+}
+
+.date-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 32px 0;
+  position: relative;
+  background: white;
+  padding: 0 8px;
+  z-index: 2;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    border-top: 1px solid var(--divider-purple);
+    z-index: 1;
+  }
+}
+
+.date {
+  background: white;
+  border-radius: 30px;
+  border: 1px solid var(--divider-purple);
+  padding: 5px 15px;
+  font-size: 16px;
+  z-index: 2;
+}
+
+.message-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.newMessageChatContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.column {
+  height: 145px;
+  flex-direction: column;
+  display: flex;
+  align-items: flex-start;
+  padding: 32px 32px 16px 32px;
+
+  input {
+    width: 100%;
+    margin-top: 16px;
+    height: 48px;
+    border-radius: 24px;
+    border: 1px solid rgb(213, 215, 235);
+    padding-left: 16px;
+    outline: none;
+
+    &:hover {
+      border-color: rgb(161, 165, 248);
+    }
+  }
+}
+
+.absolute-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.preview-container {
+  display: flex;
+  width: fit-content;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 16px;
+  position: absolute;
+  bottom: 195px;
+  z-index: 1000;
+}
+
+.preview-image-wrapper {
+  position: relative;
+  display: inline-block;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 120px;
+  height: 120px;
+
+  &:hover {
+    background-color: var(--main-background);
+  }
+}
+
+.attachment-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  padding: 8px;
+  border-radius: 20px;
+  background-color: var(--white);
+}
+
+.delete-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  filter: brightness(0) saturate(100%) invert(14%) sepia(71%) saturate(5342%) hue-rotate(356deg) brightness(95%) contrast(118%);
+  transition: 125ms ease-in-out;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.error-message {
+  font-size: 12px;
+  color: var(--error-color);
+  padding-top: 16px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.app-profile-card {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+}
+
+app-welcome-channel {
+  width: 100%;
+}
+
+
+@media(max-width:1300px) {
+  .channelMembersIcons {
+    display: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .messageBox {
+    height: 120px;
+    margin: 8px;
+
+    .messageBoxBottom {
+      height: 16px;
+
+      img {
+        width: 25px;
+      }
+
+      .iconsLeft {
+        div {
+          width: 25px;
+          height: 25px;
+        }
+      }
+
+      .sendMessage {
+        width: 25px;
+        height: 25px;
+        background-size: 20px;
+      }
+    }
+  }
+
+  .no-messages {
+    padding: 0px 16px;
+
+    .nm_header {
+
+      .nm_hashtag {
+        width: 15px !important;
+        height: 15px !important;
+      }
+
+      .nm_channelName {
+        font-size: 14px !important;
+      }
+    }
+
+    .nm_content {
+      span {
+        font-size: 14px !important;
+      }
+    }
+  }
+
+  .message-info {
+    div {
+      >img {
+        width: 50px;
+      }
+
+      h2 {
+        font-size: 18px;
+        padding-left: 12px;
+      }
+    }
+
+    span {
+      font-size: 14px;
+    }
+  }
+
+  .chat-container {
+    padding: 16px 8px;
+    max-height: calc(100% - 225px);
+  }
+
+  .date {
+    font-size: 14px;
+  }
+
+  .header-title {
+    padding-left: 16px;
+    padding-right: 16px;
+
+    .header-channel-info {
+      padding-right: 0px;
+    }
+
+    .header-channel-name {
+      padding: 4px;
+      width: 550px;
+    }
+  }
+
+  .channelMembersIcons {
+    display: none !important;
+  }
+}
+
+@media(max-width: 400px) {
+  .chat-container {
+    padding: 0px;
+  }
+}
