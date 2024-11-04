@@ -37,8 +37,8 @@ Die Anwendung folgt dem komponentenbasierten Architekturansatz, um die Wiederver
 
 1. **Projekt klonen**:
    ```bash
-   git clone https://github.com/Marco-Ammann/Da-Bubble.git
-   cd Da-Bubble
+   git clone https://github.com/Marco-Ammann/DABubble.git
+   cd DaBubble
    ```
 
 2. **Abhängigkeiten installieren**:
